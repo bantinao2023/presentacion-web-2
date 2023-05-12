@@ -105,6 +105,61 @@
     </button>
 </div>
 </head>
+<section>
+  <table>
+    <tr>
+      <td>UF</td>
+      <td><label id="lblUfValor"></label></td>
+    </tr>
+    <tr>
+        <td colspan="2"><label id="lblUfValor"></label></td> 
+    </tr>
+    <tr>
+        <td>DOLAR</td>
+        <td><label id="lblUsdValor"></label></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label id="lblUsValor"></label></td> 
+      </tr>
+      <tr>
+        <td>EURO</td>
+        <td><label id="lblEuroValor"></label></td>
+      </tr>
+      <tr>
+          <td colspan="2"><label id="lblEuroValor"></label></td> 
+      </tr>
+      <tr>
+        <td>UTM</td>
+        <td><label id="lblUtmValor"></label></td>
+      </tr>
+      <tr>
+          <td colspan="2"><label id="lblUtmValor"></label></td> 
+      </tr>
+      <tr>
+        <td>BITCOIN</td>
+        <td><label id="lblBitValor"></label></td>
+      </tr>
+      <tr>
+          <td colspan="2"><label id="lblBitValor"></label></td> 
+      </tr>
+
+  </table>
+  
+  <script>
+    $(document).ready(function(){
+      var json = "https://mindicador.cl/api";
+
+     $.get(json, function(data){
+        $("#lblUfValor").text(data.uf.valor);
+        $("#lblUsdValor").text(data.dolar.valor);
+        $("#lblEuroValor").text(data.euro.valor);
+        $("#lblUtmValor").text(data.utm.valor);
+        $("#lblBitValor").text(data.bitcoin.valor);            
+        console.log(data);
+     });     
+   });  
+  </script>
+</section>
 </body>
 </main>
 <footer class="py-5">
